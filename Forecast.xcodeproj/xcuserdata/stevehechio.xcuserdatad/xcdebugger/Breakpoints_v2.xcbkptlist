@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "0171199B-C937-41D4-9EC4-9F6AD7D6B685"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "593671D1-7E2E-47B7-A562-D24392B87477"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Forecast/Services/OpenWeatherApiService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "fetchWeatherData(lat:lng:endpoint:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "593671D1-7E2E-47B7-A562-D24392B87477 - 2853336dbbea6363"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Forecast.OpenWeatherApiService.fetchWeatherData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(lat: Swift.Double, lng: Swift.Double, endpoint: Forecast.OpenWeatherApiService.Endpoint, completionHandler: (Swift.Optional&lt;&#x3c4;_0_0&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Services/OpenWeatherApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "2200">
+               </Location>
+               <Location
+                  uuid = "593671D1-7E2E-47B7-A562-D24392B87477 - 2853336dbbea6363"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Forecast.OpenWeatherApiService.fetchWeatherData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(lat: Swift.Double, lng: Swift.Double, endpoint: Forecast.OpenWeatherApiService.Endpoint, completionHandler: (Swift.Optional&lt;&#x3c4;_0_0&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Services/OpenWeatherApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1328">
+               </Location>
+               <Location
+                  uuid = "593671D1-7E2E-47B7-A562-D24392B87477 - 2853336dbbea6363"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Forecast.OpenWeatherApiService.fetchWeatherData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(lat: Swift.Double, lng: Swift.Double, endpoint: Forecast.OpenWeatherApiService.Endpoint, completionHandler: (Swift.Optional&lt;&#x3c4;_0_0&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Services/OpenWeatherApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "2516">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D59C6085-DE08-489E-825B-C86A88B02B19"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Forecast/Viewmodel/WeatherViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "currentWeather"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2B03B2F-339A-4EC6-856D-B90345000A9F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Forecast/Viewmodel/WeatherViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "forecastWeather"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C342312D-E932-44DE-A105-D3DA66CAF63E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Forecast/Viewmodel/WeatherViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "updateUIState()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C342312D-E932-44DE-A105-D3DA66CAF63E - e1cbb5567e11fbc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Forecast.WeatherViewModel.updateUIState() -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Viewmodel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "C342312D-E932-44DE-A105-D3DA66CAF63E - e1cbb5567e11fbc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Forecast.WeatherViewModel.updateUIState() -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Viewmodel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "C342312D-E932-44DE-A105-D3DA66CAF63E - e1cbb5567e11fbc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Forecast.WeatherViewModel.updateUIState() -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Viewmodel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6221BFF7-7B9C-49D1-8C1D-13151649F651"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Forecast/Viewmodel/WeatherViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "updateUIState()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6221BFF7-7B9C-49D1-8C1D-13151649F651 - e1cbb5567e11fb46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Forecast.WeatherViewModel.updateUIState() -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Viewmodel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "6221BFF7-7B9C-49D1-8C1D-13151649F651 - e1cbb5567e11fb46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Forecast.WeatherViewModel.updateUIState() -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Viewmodel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  uuid = "6221BFF7-7B9C-49D1-8C1D-13151649F651 - e1cbb5567e11fb46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Forecast.WeatherViewModel.updateUIState() -&gt; ()"
+                  moduleName = "Forecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevehechio/XcodeStudioProjects/Forecast/Forecast/Viewmodel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
