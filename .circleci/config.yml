@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  build_and_test:
+    macos:
+      xcode: 14.3.1
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: pod install
+      - run:
+          name: Build for Testing
+          command: xcodebuild build-for-testing -workspace "Forecast.xcworkspace" -scheme "Forecast" -destination "platform=iOS Simulator,name=iPhone 11"
+      - run:
+          name: Run Tests
+          command: xcodebuild test -workspace "Forecast.xcworkspace" -scheme "Forecast" -destination "platform=iOS Simulator,name=iPhone 11"
+
+workflows:
+  build_test_workflow:
+    jobs:
+      - build_and_test
+
