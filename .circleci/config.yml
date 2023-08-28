@@ -5,6 +5,9 @@ jobs:
       xcode: 14.3.1
     steps:
       - checkout
+            - run:
+          name: Set TERM Environment Variable
+          command: export TERM=dumb
       - run:
           name: Clean Build Artifacts
           command: rm -rf ~/Library/Developer/Xcode/DerivedData
