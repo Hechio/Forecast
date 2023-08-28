@@ -5,7 +5,7 @@ jobs:
       xcode: 14.3.1
     steps:
       - checkout
-            - run:
+      - run:
           name: Set TERM Environment Variable
           command: export TERM=dumb
       - run:
