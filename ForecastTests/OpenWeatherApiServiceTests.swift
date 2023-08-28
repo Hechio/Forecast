@@ -30,7 +30,7 @@ class OpenWeatherApiServiceTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 10.0)
+        wait(for: [expectation], timeout: 20.0)
     }
     
     
@@ -44,7 +44,7 @@ class OpenWeatherApiServiceTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 10.0)
+        wait(for: [expectation], timeout: 20.0)
     }
 
     func testFetchForecastWeather_Success() {
@@ -57,7 +57,7 @@ class OpenWeatherApiServiceTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 10.0)
+        wait(for: [expectation], timeout: 20.0)
     }
 
 
