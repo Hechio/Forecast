@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Clean Build Artifacts
+          command: rm -rf ~/Library/Developer/Xcode/DerivedData
+      - run:
           name: Install Dependencies
           command: pod install
       - run:
@@ -19,4 +22,5 @@ workflows:
   build_test_workflow:
     jobs:
       - build_and_test
+
 
