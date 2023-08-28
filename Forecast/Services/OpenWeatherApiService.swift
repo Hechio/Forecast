@@ -14,7 +14,7 @@ class OpenWeatherApiService {
     
     private let session = URLSession.shared
     private let decoder = JSONDecoder()
-    private let apiKey = ""
+    private let apiKey = "a8b0b7460b45439dd84f411d489c7898"
 
     private enum Endpoint: String {
         case forecastWeather = "forecast"
