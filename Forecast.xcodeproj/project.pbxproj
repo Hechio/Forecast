@@ -47,6 +47,7 @@
 		8B0F06B92A9BA7AE00592796 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06B82A9BA7AE00592796 /* MapViewController.swift */; };
 		8B0F06BB2A9BB2C800592796 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06BA2A9BB2C800592796 /* City.swift */; };
 		8B0F06BD2A9BB33600592796 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06BC2A9BB33600592796 /* CustomCalloutView.swift */; };
+		8B0F06C12A9CC87B00592796 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06C02A9CC87B00592796 /* CoreDataManagerTests.swift */; };
 		F18BE7527966FB25AE4B511A /* libPods-Forecast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C20E0BC794E1C445CB5F295 /* libPods-Forecast.a */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		8B0F06B82A9BA7AE00592796 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B0F06BA2A9BB2C800592796 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		8B0F06BC2A9BB33600592796 /* CustomCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
+		8B0F06C02A9CC87B00592796 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		9A00B749430165C136F17443 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				8B0F06992A99174400592796 /* OpenWeatherApiServiceTests.swift */,
+				8B0F06C02A9CC87B00592796 /* CoreDataManagerTests.swift */,
 			);
 			path = ForecastTests;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B0F06C12A9CC87B00592796 /* CoreDataManagerTests.swift in Sources */,
 				8B0F069A2A99174400592796 /* OpenWeatherApiServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

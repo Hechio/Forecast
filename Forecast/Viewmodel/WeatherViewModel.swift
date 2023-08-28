@@ -14,6 +14,8 @@ class WeatherViewModel: ObservableObject {
     var locationManager = LocationManager()
     
     let apiService = OpenWeatherApiService()
+    let networkConnectivity = NetworkConnectivity.shared
+    private var currentWeatherSet = Set<String>()
     
     @Published var uiState: UIState = .loading {
         willSet {
@@ -37,11 +39,16 @@ class WeatherViewModel: ObservableObject {
     private var forecastWeatherUIState = UIState.loading
     
     init() {
-        locationManager.requestLocation()
-        locationManager.$location.sink { [weak self] location in
-            guard let location = location else { return }
-            self?.getWeatherData(location: location)
-        }.store(in: &cancellables)
+        if networkConnectivity.isReachable() {
+            locationManager.$location.sink { [weak self] location in
+                guard let location = location else { return }
+                self?.getWeatherData(location: location)
+            }.store(in: &cancellables)
+            locationManager.requestLocation()
+        }else {
+            getWeatherRemoteData()
+        }
+
     }
     
     func retry() {
@@ -65,6 +72,7 @@ class WeatherViewModel: ObservableObject {
             if let currentWeather = weatherResponse {
                 viewmodel.currentWeather = currentWeather
                 viewmodel.currentWeatherUIState = .success
+                CoreDataManager.shared.saveWeatherToCoreData(weather: currentWeather)
             } else {
                 viewmodel.currentWeatherUIState = .failed
             }
@@ -76,12 +84,40 @@ class WeatherViewModel: ObservableObject {
             if let forecastWeather = weatherResponse {
                 viewmodel.forecastWeather = forecastWeather
                 viewmodel.forecastWeatherUIState = .success
+                CoreDataManager.shared.saveForecastToCoreData(weather: forecastWeather.forecastList, cityName: forecastWeather.city.name)
             } else {
                 viewmodel.forecastWeatherUIState = .failed
             }
             viewmodel.updateUIState()
             
         }
+    }
+    
+    
+    func getWeatherRemoteData(){
+        CoreDataManager.shared.fetchDataFromCoreData()?.forEach({ entity in
+            
+            let favWeather = entity.toWeatherResponse()
+            
+            if !currentWeatherSet.contains(favWeather.name) {
+                currentWeather = favWeather
+                currentWeatherSet.insert(favWeather.name)
+            }
+            var favList: [ForecastWeather] = []
+            CoreDataManager.shared.fetchDataFromCoreData(cityName: favWeather.name)?.forEach({ entity in
+                
+                let favWeather = entity.toForecactResponse()
+                favList.append(favWeather)
+                
+            })
+            
+            forecastWeather = ForecastResponse(code: "", message: 0, count: 0, list: favList, city: ForecastCity(id: 0, name: favWeather.name, coordinate: Coordinate.emptyInit(), country: ""))
+            
+           
+        })
+        forecastWeatherUIState = .success
+        currentWeatherUIState = .success
+        updateUIState()
         
         
     }

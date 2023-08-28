@@ -59,7 +59,7 @@ class FavoritesViewModel: ObservableObject {
         CoreDataManager.shared.fetchDataFromCoreData()?.forEach({ entity in
             
             let favWeather = entity.toWeatherResponse()
-            print("Core Fav\(favWeather)")
+            
             if !currentWeatherSet.contains(favWeather.name) {
                 currentWeather.append(favWeather)
                 currentWeatherSet.insert(favWeather.name)

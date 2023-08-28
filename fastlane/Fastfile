@@ -1,0 +1,16 @@
+default_platform :ios
+
+platform :ios do
+  before_all do
+    setup_circle_ci
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan(
+      use_clang_report_name: true,
+      output_types: 'junit',
+      output_files: 'report.xml'
+    )
+  end
+end

@@ -37,7 +37,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first?.coordinate
-        print("Location manager: \(String(describing: location))")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

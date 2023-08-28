@@ -77,8 +77,8 @@
             filePath = "Forecast/Viewmodel/WeatherViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "currentWeather"
             landmarkType = "24">
          </BreakpointContent>
@@ -93,8 +93,8 @@
             filePath = "Forecast/Viewmodel/WeatherViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "forecastWeather"
             landmarkType = "24">
          </BreakpointContent>
@@ -109,8 +109,8 @@
             filePath = "Forecast/Viewmodel/WeatherViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "updateUIState()"
             landmarkType = "7">
             <Locations>
@@ -172,8 +172,8 @@
             filePath = "Forecast/Viewmodel/WeatherViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "updateUIState()"
             landmarkType = "7">
             <Locations>

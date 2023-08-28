@@ -9,11 +9,11 @@ jobs:
           name: Install Dependencies
           command: pod install
       - run:
-          name: Build for Testing
-          command: xcodebuild build-for-testing -workspace "Forecast.xcworkspace" -scheme "Forecast" -destination "platform=iOS Simulator,name=iPhone 11"
+          name: Set Fastlane Output Directory
+          command: echo "export FL_OUTPUT_DIR=$CIRCLE_ARTIFACTS" >> $BASH_ENV
       - run:
-          name: Run Tests
-          command: xcodebuild test -workspace "Forecast.xcworkspace" -scheme "Forecast" -destination "platform=iOS Simulator,name=iPhone 11"
+          name: Run Fastlane
+          command: fastlane test
 
 workflows:
   build_test_workflow:
