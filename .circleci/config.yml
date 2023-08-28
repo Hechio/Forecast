@@ -19,7 +19,7 @@ jobs:
           command: echo "export FL_OUTPUT_DIR=$CIRCLE_ARTIFACTS" >> $BASH_ENV
       - run:
           name: Run Fastlane
-          command: fastlane test
+          command: fastlane test --verbose
 
 workflows:
   build_test_workflow:
