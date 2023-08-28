@@ -93,38 +93,35 @@ class CoreDataManager {
         
         let fetchRequest: NSFetchRequest<ForecastEntity> = ForecastEntity.fetchRequest()
         
-        weather.forEach { forecastWeather in
-            fetchRequest.predicate = NSPredicate(format: "cityName == %@", cityName)
+        for forecastWeather in weather {
+            let dateAsInt64 = Int64(forecastWeather.date)
+            
+            fetchRequest.predicate = NSPredicate(format: "date == %lld", dateAsInt64)
             
             do {
                 if let existingWeather = try context.fetch(fetchRequest).first {
                     existingWeather.cityName = cityName
-                    existingWeather.date = Int64(forecastWeather.date)
+                    existingWeather.date = dateAsInt64
                     existingWeather.main = forecastWeather.elements.first?.main
                     existingWeather.temp = forecastWeather.mainElement.temp
-                    
                     existingWeather.lastUpdate = Int64(Date().timeIntervalSince1970)
-                    
-                    coreDataStack.saveContext()
                 } else {
                     let entity = NSEntityDescription.entity(forEntityName: "ForecastEntity", in: context)!
                     let dataObject = NSManagedObject(entity: entity, insertInto: context)
-                    dataObject.setValue(cityName, forKeyPath: "cityName")
-                    dataObject.setValue(forecastWeather.date, forKeyPath: "date")
-                    dataObject.setValue(forecastWeather.elements.first?.main, forKeyPath: "main")
                     
+                    dataObject.setValue(cityName, forKeyPath: "cityName")
+                    dataObject.setValue(dateAsInt64, forKeyPath: "date")
+                    dataObject.setValue(forecastWeather.elements.first?.main, forKeyPath: "main")
                     dataObject.setValue(forecastWeather.mainElement.temp, forKeyPath: "temp")
                     dataObject.setValue(Int(Date().timeIntervalSince1970), forKeyPath: "lastUpdate")
-                    
-                    coreDataStack.saveContext()
                 }
+                try context.save() 
             } catch {
                 print("Error saving weather data: \(error.localizedDescription)")
             }
         }
-        
-
     }
+
     
 }
 

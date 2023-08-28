@@ -29,7 +29,14 @@ class FavoritesViewModel: ObservableObject {
         }
     }
     
+    var forecastWeather: ForecastResponse = ForecastResponse.emptyInit() {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
     private var currentWeatherUIState = UIState.loading
+    private var forecastWeatherUIState = UIState.loading
     
     init() {
         getRemoteWeatherData()
@@ -52,6 +59,14 @@ class FavoritesViewModel: ObservableObject {
             viewmodel.updateUIState()
             
         }
+        apiService.fetchForecastWeather(lat: location.latitude, lng: location.longitude) { [weak self] weatherResponse, error in
+           guard let viewmodel = self else { return }
+           if let forecastWeather = weatherResponse {
+               CoreDataManager.shared.saveForecastToCoreData(weather: forecastWeather.forecastList, cityName: forecastWeather.city.name)
+           }
+       }
+        
+        
     }
     
     

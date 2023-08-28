@@ -23,7 +23,7 @@ struct FavoriteCell: View {
                 Spacer()
                 Text("\(Int(data.mainElement.temp))°")
                     .foregroundColor(.white)
-                    .font(.system(.largeTitle, weight: .bold))
+                    .font(.largeTitle).bold()
                 
             }.padding(8)
             

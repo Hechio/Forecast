@@ -95,31 +95,30 @@ class WeatherViewModel: ObservableObject {
     
     
     func getWeatherRemoteData(){
-        CoreDataManager.shared.fetchDataFromCoreData()?.forEach({ entity in
-            
-            let favWeather = entity.toWeatherResponse()
-            
+        let entity = CoreDataManager.shared.fetchDataFromCoreData()?.first
+        
+        if let favWeather = entity?.toWeatherResponse() {
             if !currentWeatherSet.contains(favWeather.name) {
                 currentWeather = favWeather
                 currentWeatherSet.insert(favWeather.name)
             }
             var favList: [ForecastWeather] = []
-            CoreDataManager.shared.fetchDataFromCoreData(cityName: favWeather.name)?.forEach({ entity in
+            let forecast = CoreDataManager.shared.fetchDataFromCoreData(cityName: favWeather.name)
+            forecast?.forEach({ entity in
                 
                 let favWeather = entity.toForecactResponse()
                 favList.append(favWeather)
                 
             })
+            if favList.count == forecast?.count {
+                forecastWeather = ForecastResponse(code: "", message: 0, count: 0, list: favList, city: ForecastCity(id: 0, name: favWeather.name, coordinate: Coordinate.emptyInit(), country: ""))
+                
+                forecastWeatherUIState = .success
+                currentWeatherUIState = .success
+                updateUIState()
+            }
             
-            forecastWeather = ForecastResponse(code: "", message: 0, count: 0, list: favList, city: ForecastCity(id: 0, name: favWeather.name, coordinate: Coordinate.emptyInit(), country: ""))
-            
-           
-        })
-        forecastWeatherUIState = .success
-        currentWeatherUIState = .success
-        updateUIState()
-        
-        
+        }
     }
     
     private func updateUIState() {
