@@ -10,7 +10,7 @@ platform :ios do
   ENV['SCAN_COLLECT_LOGS'] = 'false'
   scan(
     scheme: "ForecastTests",
-    devices: ["iPhone 13 Pro"]
+    devices: ["iPhone 14 Pro"]
   )
   end
 end
