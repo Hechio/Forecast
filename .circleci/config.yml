@@ -1,25 +1,23 @@
-version: 2.1
+version: 2
 jobs:
-  build_and_test:
+  build-and-test:
     macos:
-      xcode: 14.3.1
+      xcode: "10.2.0"
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: test
+    shell: /bin/bash --login -o pipefail
     steps:
       - checkout
+      - run: bundle install
       - run:
-          name: Set TERM Environment Variable
-          command: export TERM=dumb
-      - run:
-          name: Clean Build Artifacts
-          command: rm -rf ~/Library/Developer/Xcode/DerivedData
-      - run:
-          name: Install Dependencies
-          command: pod install
-      - run:
-          name: Set Fastlane Output Directory
-          command: echo "export FL_OUTPUT_DIR=$CIRCLE_ARTIFACTS" >> $BASH_ENV
-      - run:
-          name: Run Fastlane
-          command: fastlane test --verbose
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
 
 workflows:
   build_test_workflow:
