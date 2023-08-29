@@ -1,0 +1,7 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -workspace ./Forecast.xcworkspace -scheme ForecastTests -derivedDataPath "~/Library/Developer/Xcode/DerivedData" -destination "platform=iOS Simulator,id=1DE26422-2E6A-41DC-938B-C44EB998621D" build test
+
+User defaults from command line:
+    IDEDerivedDataPathOverride = /Users/stevehechio/Library/Developer/Xcode/DerivedData
+    IDEPackageSupportUseBuiltinSCM = YES
+
