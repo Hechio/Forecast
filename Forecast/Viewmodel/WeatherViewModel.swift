@@ -39,24 +39,38 @@ class WeatherViewModel: ObservableObject {
     private var forecastWeatherUIState = UIState.loading
     
     init() {
+        locationManager.getAuthorizationStatusUpdates()
+            .sink { status in
+                if status == .authorizedWhenInUse {
+                    self.locationManager.$location.sink { [weak self] location in
+                        guard let location = location else { return }
+                        self?.getWeatherData(location: location)
+                    }.store(in: &self.cancellables)
+                }else {
+                   print("permission denied")
+                }
+            }
+            .store(in: &cancellables)
+        
+        locationManager.$location.sink { [weak self] location in
+            guard let location = location else { return }
+            self?.getWeatherData(location: location)
+        }.store(in: &cancellables)
+        
+        
         if networkConnectivity.isReachable() {
-            locationManager.$location.sink { [weak self] location in
-                guard let location = location else { return }
-                self?.getWeatherData(location: location)
-            }.store(in: &cancellables)
-            locationManager.requestLocation()
-        }else {
+            locationManager.requestLocationPermissionUpdate()
+        } else {
             getWeatherRemoteData()
         }
-
+        
     }
     
     func retry() {
         uiState = .loading
-       currentWeatherUIState = .loading
+        currentWeatherUIState = .loading
         forecastWeatherUIState = .loading
         
-        locationManager.requestLocation()
         locationManager.$location.sink { [weak self] location in
             guard let location = location else { return }
             self?.getWeatherData(location: location)
@@ -79,7 +93,7 @@ class WeatherViewModel: ObservableObject {
             viewmodel.updateUIState()
             
         }
-         apiService.fetchForecastWeather(lat: location.latitude, lng: location.longitude) { [weak self] weatherResponse, error in
+        apiService.fetchForecastWeather(lat: location.latitude, lng: location.longitude) { [weak self] weatherResponse, error in
             guard let viewmodel = self else { return }
             if let forecastWeather = weatherResponse {
                 viewmodel.forecastWeather = forecastWeather

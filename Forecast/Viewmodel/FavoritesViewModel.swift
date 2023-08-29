@@ -59,8 +59,7 @@ class FavoritesViewModel: ObservableObject {
             viewmodel.updateUIState()
             
         }
-        apiService.fetchForecastWeather(lat: location.latitude, lng: location.longitude) { [weak self] weatherResponse, error in
-           guard let viewmodel = self else { return }
+        apiService.fetchForecastWeather(lat: location.latitude, lng: location.longitude) { weatherResponse, error in
            if let forecastWeather = weatherResponse {
                CoreDataManager.shared.saveForecastToCoreData(weather: forecastWeather.forecastList, cityName: forecastWeather.city.name)
            }

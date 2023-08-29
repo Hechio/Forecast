@@ -72,6 +72,7 @@ class CurrentViewController: UIViewController {
     }
     
     private func setUpErrorView(){
+        view.backgroundColor = .white
         indicator.hide()
         let errorUIView = ErrorView(viewmodel: viewmodel)
         let hostingController = UIHostingController(rootView: errorUIView)
@@ -125,7 +126,7 @@ class CurrentViewController: UIViewController {
         view.addSubview(summaryView)
         
         let forecastUIView = ForecastView(data: forecastWeather, backgroundColor: backgroundColor!)
-
+        
         let forecastHC = UIHostingController(rootView: forecastUIView)
         
         let forecastView = forecastHC.view!
