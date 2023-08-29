@@ -8,6 +8,9 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
   ENV['SCAN_COLLECT_LOGS'] = 'false'
-  scan
+  scan(
+    scheme: "ForecastTests",
+    devices: ["iPhone 13 Pro"]
+  )
   end
 end
