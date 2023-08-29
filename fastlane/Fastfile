@@ -7,6 +7,9 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-  run_tests(scheme: "ForecastTests")
+  run_tests(
+   scheme: "ForecastTests"
+   devices: ["iPhone 14 pro"]
+   )
   end
 end
