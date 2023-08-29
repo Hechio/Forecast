@@ -8,40 +8,42 @@
 import SwiftUI
 
 struct FavoriteCell: View {
-    let data: WeatherResponse
+    @State var data: WeatherResponse? = nil
+    @State private var showModal = false
+    //@State private var favCurrentWeather: WeatherResponse? = nil
     
     var body: some View {
         VStack(alignment: .leading){
             HStack {
                 VStack(alignment: .leading, spacing: 4){
-                    Text(data.name)
+                    Text(data!.name)
                         .foregroundColor(.white)
                         .font(.custom("Axiforma-Bold", size: 20))
-                    Text(data.date.dateFromMilliseconds().time()).foregroundColor(.white)
+                    Text(data!.date.dateFromMilliseconds().time()).foregroundColor(.white)
                         .font(.custom("Axiforma-Bold", size: 12))
                 }
                 Spacer()
-                Text("\(Int(data.mainElement.temp))°")
+                Text("\(Int(data!.mainElement.temp))°")
                     .foregroundColor(.white)
                     .font(.largeTitle).bold()
                 
             }.padding(8)
             
             HStack {
-                Text(data.weatherElements.first?.elementDescription ?? "")
+                Text(data!.weatherElements.first?.elementDescription ?? "")
                     .foregroundColor(.white)
                     .font(.custom("Axiforma-Bold", size: 12))
                     .padding(8)
                 Spacer()
                 
-                Text("H:\(Int(data.mainElement.tempMax))° L:\(Int(data.mainElement.tempMin))°")
+                Text("H:\(Int(data!.mainElement.tempMax))° L:\(Int(data!.mainElement.tempMin))°")
                     .foregroundColor(.white)
                     .font(.custom("Axiforma-Bold", size: 12))
                     .padding(8)
                 
             }
             VStack(alignment: .leading) {
-                Text("Last Update: \(data.lastUpdate?.dateFromMilliseconds().dateTime() ?? "Now")")
+                Text("Last Update: \(data!.lastUpdate?.dateFromMilliseconds().dateTime() ?? "Now")")
                     .foregroundColor(.white)
                     .frame(alignment: .trailing)
                     .font(.custom("Axiforma-Regular", size: 12))
@@ -51,6 +53,12 @@ struct FavoriteCell: View {
         }.background(Color.accentColor)
             .cornerRadius(12)
             .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+            .onTapGesture {
+                        showModal = true
+                    }
+            .sheet(isPresented: $showModal) {
+                FavoriteDetailsModal(favCurrentWeather: $data)
+            }
     }
 }
 

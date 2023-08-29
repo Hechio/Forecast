@@ -1,5 +1,5 @@
 //
-//  CoreDataHelper.swift
+//  CoreDataManager.swift
 //  Forecast
 //
 //  Created by Steve Hechio on 27/08/2023.

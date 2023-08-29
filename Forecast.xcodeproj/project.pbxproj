@@ -41,12 +41,13 @@
 		8B0F06AE2A9A654600592796 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06AD2A9A654600592796 /* CoreDataStack.swift */; };
 		8B0F06B02A9A707B00592796 /* NetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06AF2A9A707B00592796 /* NetworkConnectivity.swift */; };
 		8B0F06B22A9B516000592796 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06B12A9B516000592796 /* MapViewModel.swift */; };
-		8B0F06B42A9B531C00592796 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06B32A9B531C00592796 /* CoreDataHelper.swift */; };
+		8B0F06B42A9B531C00592796 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06B32A9B531C00592796 /* CoreDataManager.swift */; };
 		8B0F06B72A9B5E5A00592796 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06B62A9B5E5A00592796 /* MapView.swift */; };
 		8B0F06B92A9BA7AE00592796 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06B82A9BA7AE00592796 /* MapViewController.swift */; };
 		8B0F06BB2A9BB2C800592796 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06BA2A9BB2C800592796 /* City.swift */; };
 		8B0F06BD2A9BB33600592796 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06BC2A9BB33600592796 /* CustomCalloutView.swift */; };
 		8B0F06C12A9CC87B00592796 /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06C02A9CC87B00592796 /* CoreDataManagerTests.swift */; };
+		8B0F06C32A9DDE9900592796 /* FavoriteDetailsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F06C22A9DDE9900592796 /* FavoriteDetailsModal.swift */; };
 		F18BE7527966FB25AE4B511A /* libPods-Forecast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C20E0BC794E1C445CB5F295 /* libPods-Forecast.a */; };
 /* End PBXBuildFile section */
 
@@ -100,12 +101,13 @@
 		8B0F06AD2A9A654600592796 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8B0F06AF2A9A707B00592796 /* NetworkConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectivity.swift; sourceTree = "<group>"; };
 		8B0F06B12A9B516000592796 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		8B0F06B32A9B531C00592796 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		8B0F06B32A9B531C00592796 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8B0F06B62A9B5E5A00592796 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8B0F06B82A9BA7AE00592796 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B0F06BA2A9BB2C800592796 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		8B0F06BC2A9BB33600592796 /* CustomCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
 		8B0F06C02A9CC87B00592796 /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
+		8B0F06C22A9DDE9900592796 /* FavoriteDetailsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsModal.swift; sourceTree = "<group>"; };
 		9A00B749430165C136F17443 /* Pods-Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forecast.debug.xcconfig"; path = "Target Support Files/Pods-Forecast/Pods-Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -291,6 +293,7 @@
 				8B0F06A12A99FA5700592796 /* FavoritesViewController.swift */,
 				8B0F06A32A9A173B00592796 /* FavoriteCell.swift */,
 				8B0F06A52A9A478800592796 /* FavoritesListView.swift */,
+				8B0F06C22A9DDE9900592796 /* FavoriteDetailsModal.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -300,7 +303,7 @@
 			children = (
 				8B0F06AA2A9A5C9800592796 /* Weather.xcdatamodeld */,
 				8B0F06AD2A9A654600592796 /* CoreDataStack.swift */,
-				8B0F06B32A9B531C00592796 /* CoreDataHelper.swift */,
+				8B0F06B32A9B531C00592796 /* CoreDataManager.swift */,
 			);
 			path = Persistance;
 			sourceTree = "<group>";
@@ -474,7 +477,7 @@
 				8B0F06B92A9BA7AE00592796 /* MapViewController.swift in Sources */,
 				8B0F06732A97908200592796 /* ViewComponents.swift in Sources */,
 				8B0F063B2A976A9600592796 /* CurrentViewController.swift in Sources */,
-				8B0F06B42A9B531C00592796 /* CoreDataHelper.swift in Sources */,
+				8B0F06B42A9B531C00592796 /* CoreDataManager.swift in Sources */,
 				8B0F06AC2A9A5C9800592796 /* Weather.xcdatamodeld in Sources */,
 				8B0F06972A98AB5600592796 /* ActivityIndicator.swift in Sources */,
 				8B0F068B2A98887C00592796 /* MainWeatherElement.swift in Sources */,
@@ -483,6 +486,7 @@
 				8B0F06802A987EEA00592796 /* ResponseError.swift in Sources */,
 				8B0F06B02A9A707B00592796 /* NetworkConnectivity.swift in Sources */,
 				8B0F067E2A97E5EF00592796 /* OpenWeatherApiService.swift in Sources */,
+				8B0F06C32A9DDE9900592796 /* FavoriteDetailsModal.swift in Sources */,
 				8B0F06772A97A55200592796 /* SummaryView.swift in Sources */,
 				8B0F06902A9893B300592796 /* UIState.swift in Sources */,
 				8B0F06B22A9B516000592796 /* MapViewModel.swift in Sources */,

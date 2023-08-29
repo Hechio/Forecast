@@ -8,10 +8,9 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
     ENV['SCAN_COLLECT_LOGS'] = 'false'
-    scan(
-      use_clang_report_name: true,
-      output_types: 'junit',
-      output_files: 'report.xml'
-    )
+  scan(
+    scheme: "ForecastTests",
+    devices: ["iPhone 13 Pro"]
+  )
   end
 end

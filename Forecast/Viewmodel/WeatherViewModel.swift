@@ -135,6 +135,25 @@ class WeatherViewModel: ObservableObject {
         }
     }
     
+    func getFavoriteForecast(cityName: String){
+        var favList: [ForecastWeather] = []
+        let forecast = CoreDataManager.shared.fetchDataFromCoreData(cityName: cityName)
+        forecast?.forEach({ entity in
+            
+            let favWeather = entity.toForecactResponse()
+            favList.append(favWeather)
+            
+        })
+        if favList.count == forecast?.count {
+            forecastWeather = ForecastResponse(code: "", message: 0, count: 0, list: favList, city: ForecastCity(id: 0, name: cityName, coordinate: Coordinate.emptyInit(), country: ""))
+            
+            forecastWeatherUIState = .success
+            updateUIState()
+        }
+    }
+    
+    
+    
     private func updateUIState() {
         if currentWeatherUIState == .success, forecastWeatherUIState == .success {
             uiState = .success

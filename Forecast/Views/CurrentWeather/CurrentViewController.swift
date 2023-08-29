@@ -11,12 +11,31 @@ import Combine
 
 class CurrentViewController: UIViewController {
     var cancellables = Set<AnyCancellable>()
-    
+    var showFavDetails = false
+    var favCurrentWeather = WeatherResponse.emptyInit()
     @ObservedObject var viewmodel = WeatherViewModel()
     let indicator = ActivityIndicator.shared
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if showFavDetails {
+            viewmodel.getFavoriteForecast(cityName: favCurrentWeather.name)
+            viewmodel.$uiState
+                .sink { [weak self] state in
+                    if state == .success {
+                        self?.handleFavUIState(state)
+                    }
+                }
+                .store(in: &cancellables)
+            
+            
+        }else {
+            setupViews()
+        }
+    }
+    
+    func setupViews(){
         setUpNavigationButtons()
         viewmodel.$uiState
             .sink { [weak self] state in
@@ -51,6 +70,22 @@ class CurrentViewController: UIViewController {
     
     @objc func mapButtonTapped() {
         navigationController?.pushViewController(MapViewController(), animated: true)
+    }
+    
+    func handleFavUIState(_ state: UIState) {
+        switch state {
+        case .success:
+            print("Modal: \(viewmodel.forecastWeather)")
+            indicator.hide()
+            setupMainForecastView(currentWeather: favCurrentWeather, forecastWeather: viewmodel.forecastWeather)
+        case .failed:
+            setUpErrorView()
+            break
+        case .loading:
+            view.backgroundColor = .white
+            indicator.show(in: self.view)
+            break
+        }
     }
     
     func handleUIState(_ state: UIState) {
