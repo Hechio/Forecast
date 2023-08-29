@@ -10,7 +10,6 @@ import CoreData
 
 class CoreDataManager {
     static let shared = CoreDataManager()
-    
     let coreDataStack = CoreDataStack(modelName: "Weather")
     
     func saveWeatherToCoreData(weather: WeatherResponse) {
@@ -87,7 +86,6 @@ class CoreDataManager {
         }
     }
     
-    
     func saveForecastToCoreData(weather: [ForecastWeather], cityName: String) {
         let context = coreDataStack.managedContext
         
@@ -121,8 +119,6 @@ class CoreDataManager {
             }
         }
     }
-
-    
 }
 
 extension WeatherEntity {
