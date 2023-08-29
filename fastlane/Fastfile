@@ -8,7 +8,7 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
   scan(
-    scheme: "",
+    scheme: "ForecastTests",
     devices: ["iPhone 14 Pro"],
       suppress_xcode_output: false,
       clean:true,
