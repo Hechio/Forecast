@@ -22,6 +22,7 @@ jobs:
 workflows:
   build_test_workflow:
     jobs:
-      - build_and_test
+      - build-and-test
+
 
 
