@@ -18,6 +18,11 @@ This app has been built using Xcode 14. XCode automatically manages signing but 
 # The App
 The app displays the current weather at the user’s location
 and a 5-day forecast from [Open Weather API](https://api.openweathermap.org/data/2.5/).
+You may need to get apiKey from Open Weather API and add it to `apiKey` variable in the `OpenWeatherApiService` class.
+    
+    class OpenWeatherApiService {
+    ......other code.....
+    private let apiKey = "ADD YOUR API KEY HERE"
 
 ## Additional Features
 a. The ability to save different weather locations as favourites.<br>
